@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}Create Theme{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    
+    <body>
+     
+        <form class="example" method="post" action="" enctype = "multipart/form-data">
+            <input type="text" name="themename" placeholder="themename" id="themename" required>
+            <input type="text" placeholder="Enter Description" name="description" id="description">
+            <input type = "file" name = "file" />
+            <button type="submit"><i class="fa fa-search"></i>
+            </button>
+        </form>
+    </body>
+</html>
+{% endblock %}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Idea Portal</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+    crossorigin="anonymous"></script>
+
+  <!-- CSS only -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, min-scale=1, max-scale=1"> -->
+
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
+
+  <!-- MDB js-->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+
+  <link rel="stylesheet" href='./navbar.component.scss'>
+</head>
+
+
+<nav class="navbar navbar-light orange-g shadow-lg" style="background-color: white;">
+  <div class="container-fluid d-flex col-md-12">
+    <a class="navbar-brand" routerLink="/dashboard">
+      <img src="assets/img/brand-logo.svg" alt="" width="100%" height="30" class="d-inline-block align-text-top">
+    </a>
+    <div class="navbar-item col-md-9 text-center">
+      <h1 class="d-flex justify-content-center" style="margin-top: 1%;">
+        Idea Portal
+      </h1>
+    </div>
+    <!-- <div class="col-md-1">
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item avatar dropdown" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect
+            [matMenuTriggerFor]="menu">
+            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" alt="" width="30" height="30"
+              class="img-fluid rounded-circle z-depth-0"></a>
+          <mat-menu #menu="matMenu">
+           
+            
+            <button *ngIf="!loginStatus"  mat-menu-item (click)="signIn()">Sign In</button>
+            <button *ngIf="!loginStatus"  mat-menu-item (click)="signUp()">Sign Up</button>
+            <button *ngIf="loginStatus"  mat-menu-item routerLink="/updateProfile">Update Profile</button>
+            <button *ngIf="loginStatus"  mat-menu-item (click)="logout()">Logout</button>
+
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<div class="nameDisplay" *ngIf='loginStatus'>{{userName}}</div>
+    <div class="col-md-1">
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item avatar dropdown" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link" mdbWavesEffect
+            [matMenuTriggerFor]="menu">
+            <mat-icon>account_circle</mat-icon></a>
+          <mat-menu #menu="matMenu">
+           
+            <!-- <button *ngIf='loginStatus' mat-menu-item (click)="myProfile()">My profile</button> -->
+            <button *ngIf='loginStatus'  mat-menu-item routerLink="/updateProfile">Update Profile</button>
+            <button *ngIf='loginStatus' mat-menu-item (click)="logout()">Logout</button>
+            <button *ngIf='!loginStatus'  mat-menu-item (click)="signIn()">Sign In</button>
+            <button  *ngIf='!loginStatus' mat-menu-item (click)="signUp()">Sign Up</button>
+
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

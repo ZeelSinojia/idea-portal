@@ -1,0 +1,149 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Idea Portal</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+    crossorigin="anonymous"></script>
+
+  <!-- CSS only -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, min-scale=1, max-scale=1"> -->
+
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
+
+  <!-- MDB js-->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+
+  <link rel="stylesheet" href='./themeboard.component.scss'>
+</head>
+
+<body>
+
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-light orange-g shadow-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="position: absolute;">
+        <img src="assets/img/persistent-systems-header-logo.png" alt=""
+          width="180" height="50">
+      </a>
+      <div class="collapse navbar-collapse ms-auto me-auto justify-content-center" id="navbarSupportedContent">
+        <h3>Idea Portal</h3>
+      </div>
+    </div>
+  </nav> -->
+
+  <!-- <mdb-navbar SideClass="navbar navbar-dark indigo">
+    <mdb-navbar-brand>
+        <a class="navbar-brand" href="#">
+            <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt="">
+        </a>
+    </mdb-navbar-brand>
+</mdb-navbar> -->
+
+
+
+  <mat-card class="theme-card">
+    <mat-card-header>
+        <div mat-card-avatar class="card-header-image">
+            <img mat-card-image src ='assets/img/logo1.png'>
+        </div>
+      <mat-card-title>{{card.themeName}}</mat-card-title>
+      <mat-card-subtitle>Persistent Systems</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+        <div id = 'card-content'>
+            <h2>
+                <strong>
+                    Problem Statement: 
+                </strong>
+            </h2>
+             <p>
+                Create a web application for the idea portal.
+            </p>
+        </div>
+    </mat-card-content>
+
+    <mat-card-content>
+        <div id = 'card-content'>
+            <h2>
+                <strong>
+                    Descripton: 
+                </strong>
+            </h2>
+             <p>
+                {{card.themeDescription}}
+            </p>
+        </div>
+    </mat-card-content>
+
+    <mat-card-content>
+        <div id = 'card-content'>
+            <h2>
+                <strong>
+                    Attached Files:
+                </strong>
+            </h2>
+            <div>
+              
+              <ul *ngFor="let artificat of artificats">
+ 
+               <li> <a href="{{artificat.artifactURL}}" target="_blank" >{{artificat.originalFileName}}</a></li>
+              </ul>
+
+              <!-- <div class="container">
+                <div id="file_load" class="item" >
+                     <label id="caption">sample.docx</label> 
+                    
+                    <a href="{{card.themeDocxURL}}" target="_blank" >
+                        <img src="assets/icons/docx.png" alt="" style="width:100px;height:100px;">
+                    </a>
+                    <a href="{{card.themePPTURL}}" target="_blank">
+                      <img src="assets/icons/ppt.jpg" alt="" style="width:100px;height:100px;">
+                  </a>
+                  <a href="{{card.themeVideoURL}}" target="_blank">
+                    <img src="assets/icons/mp4.jpg" alt="" style="width:100px;height:100px;">
+                </a>
+            </div>
+            <div class="viewAll">
+            <div class="animatedbutton">
+                <a href="#" target="_blank">View All </a>
+            </div>
+            </div> 
+            </div> -->
+            </div>
+             <!-- <a href="#" target="_blank">
+                <img id="file" src="assets/icons/docx.png" width="100px" height="100px"/>
+            </a> 
+            <a href="#" target="_blank">
+              <img id="file" src="assets/icons/ppt.jpg" width="100px" height="100px"/>
+          </a> 
+          <a href="#" target="_blank">
+            <img id="file" src="assets/icons/mp4.jpg" width="100px" height="100px"/>
+        </a>  -->
+            <!-- <div ng-init="myVar = 'pic_angular.jpg'">
+                <h1></h1>
+                <img ng-src="{{myVar}}">
+            </div> -->
+            </div>
+    </mat-card-content>
+    <mat-card-actions class="card-buttons">
+      <button mat-raised-button style="background-color:#FF8C00; " (click)="getSolutions()" >View Solutions</button>
+      <button mat-raised-button style="background-color:#FF8C00;" (click)="openDialog()" *ngIf= "solnBtnFlag">Create Solution</button>
+    </mat-card-actions>
+</mat-card>
+
+</body>
+
+<!-- *ngIf="role=='Product Manager'" -->

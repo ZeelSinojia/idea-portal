@@ -1,0 +1,60 @@
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,200i,300i,400,400i,500,500i');
+
+body{
+  height: 100vh;
+  background: -webkit-repeating-linear-gradient(-45deg, #ffc635, #ff8c00);
+  background-size: 400%;
+  // overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  border: 1px solid #ff0000;
+  @include mat-elevation(8);
+
+  .navbar-item{
+    display: flex;
+    height: auto;
+    width: auto;
+  }
+
+  .navbar-icon-profile{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 43vw;
+  }
+}
+
+#banner {
+
+  position: relative;
+  width: 90%;
+  min-height: 80%;
+  margin-left: 5%;
+  margin-top: 50px;
+  padding-top: 30px;
+  background: #fff;
+
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  line-height: 28px;
+
+  .title {
+    padding-left: 50px;
+  }
+
+  .info {
+    padding-right: 4vw;
+  }
+
+  .bord {
+    border-left: rgba(117, 117, 117, 0.288) solid 1px;
+  }
+
+  .col-8 {
+    .row {
+      margin-bottom: 20px;
+    }
+  }
+
+}

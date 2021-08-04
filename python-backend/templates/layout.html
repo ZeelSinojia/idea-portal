@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}{% endblock %}</title>
+		
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body class="loggedin">
+		<nav class="navtop">
+			<div>
+				<h1>Website Title</h1>
+                <a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
+				<a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+				<a href="{{ url_for('viewtheme') }}"><i class="fas fa-sign-out-alt"></i>View All themes</a>
+				<a href="{{ url_for('viewidea') }}"><i class="fas fa-sign-out-alt"></i>View All Ideas</a>
+				<a href="{{ url_for('viewonetheme') }}"><i class="fas fa-sign-out-alt"></i>View One Theme</a>
+				<a href="{{ url_for('viewoneidea') }}"><i class="fas fa-sign-out-alt"></i>View One Idea</a>
+				<a href="{{ url_for('commentidea') }}"><i class="fas fa-sign-out-alt"></i>Comment on idea</a>
+				<a href="{{ url_for('viewcomment') }}"><i class="fas fa-sign-out-alt"></i>View Comment</a>
+				<a href="{{ url_for('likedislike') }}"><i class="fas fa-sign-out-alt"></i>Like and dislike</a>
+				<a href="{{ url_for('countlikedislike') }}"><i class="fas fa-sign-out-alt"></i>Count of like &dislike</a>
+				<a href="{{ url_for('updatecompany') }}"><i class="fas fa-sign-out-alt"></i>Update company name</a>
+				<a href="{{ url_for('updateemail') }}"><i class="fas fa-sign-out-alt"></i>Update email</a>
+				<a href="{{ url_for('updatepassword') }}"><i class="fas fa-sign-out-alt"></i>Update password</a>
+				<a href="{{ url_for('createtheme') }}"><i class="fas fa-sign-out-alt"></i>Create Theme</a>
+				<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+			</div>
+		</nav>
+		<div class="content">
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>

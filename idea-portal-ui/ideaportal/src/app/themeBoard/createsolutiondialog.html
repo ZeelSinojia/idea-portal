@@ -1,0 +1,59 @@
+<h1 mat-dialog-title style="justify-content: center; display: flex;">Idea Theme</h1>
+<form [formGroup]="ideaForm" >
+<div mat-dialog-content>
+  <p>Idea Name</p>
+  <mat-form-field>  
+    <mat-label>Idea Name</mat-label>
+    <input matInput  formControlName="themeName">
+  </mat-form-field>
+
+  <p>Description</p>
+  <mat-form-field appearance="outline" style="width: 100%;">  
+    <mat-label>Description</mat-label>
+    <input matInput formControlName="description" >
+  </mat-form-field>
+
+<!-- <p>Describe your Tech Stack</p>
+  <mat-form-field appearance="outline" style="width: 100%;">  
+    <mat-label>Tech Stack</mat-label>
+    <input matInput [(ngModel)]="data.techstack">
+  </mat-form-field> -->
+<br>
+<p></p>
+  <label for="singleFile1" style="align-items: center;">Upload Files</label>
+<input id="singleFile1" type="file"    (change)="getFileDetails($event)"  formControlName="themeDocx"  multiple/>
+
+<div *ngFor="let f of files">
+  <div>*  {{f.name}}</div> 
+</div>
+<!-- <br><br>
+<p></p>
+  <label for="singleFile2" style="align-items: center;">Upload Power Point</label>
+<input id="singleFile2" type="file" (change)="onFileChangePpt($event)"  formControlName="themePpt" /> -->
+
+<!-- <br><br>
+<p></p>
+  <label for="singleFile3" style="align-items: center;">Upload Video</label>
+<input id="singleFile3" type="file"  (change)="onFileChangeVideo($event)"  formControlName="themeVideo" />  -->
+
+<!-- <br>
+<h3><br>Or</h3>
+
+<div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
+    Just drag and drop files here
+</div> -->
+
+
+<!-- <mat-file-upload-queue #fileUploadQueue
+    [fileAlias]="'file'"
+    [httpUrl]="'src/assets/file/'">
+
+    <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+</mat-file-upload-queue> -->
+
+</div>
+</form>
+<div mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close] style="margin-right: 3rem; margin-left: 80%;">Cancel</button>
+  <button mat-raised-button  cdkFocusInitial (click)="saveIdea()">Submit</button>
+</div>

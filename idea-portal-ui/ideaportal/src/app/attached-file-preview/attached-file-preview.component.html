@@ -1,0 +1,14 @@
+
+<div class="container">
+    <div id="file_load" class="item" *ngFor="let file of getFiles() | keyvalue">
+        <label id="caption">{{getName(file.value)}}</label>
+        
+        <a href="{{file.value}}" target="_blank">
+            <img src="{{file.key}}" alt="{{file.value}}">
+        </a>
+</div>
+<div class="viewAll">
+<div class="animatedbutton">
+    <a href="{{link_to_all_documents}}" target="_blank">View All [{{allCnt}}]</a>
+</div>
+</div>

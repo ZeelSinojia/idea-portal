@@ -1,0 +1,64 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  
+<div id="banner">
+  <div class="d-flex mb-6 row">
+  <div class="col-8 ">
+    <div class="d-flex mb-6 row">
+      <div class="col-3 title">
+        <h2> <strong>Idea Title:</strong> </h2>
+      </div>
+      <div class="col-9 info">
+        <p> {{getIdeaTitle()}} </p>
+      </div>
+    </div>
+
+    <div class="d-flex mb-6 row">
+      <div class="col-3 title">
+        <h2> <strong>Idea Description:</strong> </h2>
+      </div>
+      <div class="col-9 info">
+        <p> {{getIdeaDescription()}} </p>
+      </div>
+    </div>
+
+    <div class="d-flex mb-6 row">
+      <div class="col-3 title">
+        <h2> <strong>Technology Stack:</strong> </h2>
+      </div>
+      <div class="col-9 info">
+        <p> {{getTechnologyStack()}} </p>
+      </div>
+    </div>
+
+    <div class="d-flex mb-6 row">
+      <div class="col-3 title">
+        <h2> <strong>Attached Files:</strong> </h2>
+      </div> <br><br>
+      <div class="col-9">
+          <!-- <app-attached-file-preview></app-attached-file-preview> -->
+        
+          <ul *ngFor="let artificat of artificats">
+ 
+            <li> <a href="{{artificat.artifactURL}}" target="_blank" >{{artificat.originalFileName}}</a></li>
+           </ul>
+         
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4 bord">
+    <app-like-dislike-button></app-like-dislike-button>
+    <app-comment-box></app-comment-box>
+  </div>
+  </div>
+
+</div>
+</body>
+  

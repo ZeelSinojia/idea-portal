@@ -1,0 +1,32 @@
+
+
+<div class = "container1">
+    <div class="top">
+        <input type="text" placeholder="Search Theme" class="form-control" id="search">
+        
+        <!-- <input type="text" placeholder="Sort" class="form"/> -->
+        <button mat-raised-button color="orange" class="mat-orange" (click)="createThemeLoginCheck()" *ngIf="flag">Create Theme</button>
+
+
+    </div>
+    <div *ngIf="(card==null)"><h3 style="text-align:right; color: red;">No Themes Found</h3></div>
+    <div *ngFor="let obj of card | paginate: {itemsPerPage:4,currentPage:page}"class="container2">
+
+        <div routerLink ="/solutions" routerLinkActive="active" class="card">
+
+        <div class="card" (click)="getTheme(obj.themeID)" style="cursor: pointer;">
+
+            <div class="card-body">
+                <img src="assets/img/logo1.png" alt="Avatar">
+                <div class="client-name">
+                  <h4><b>{{obj.client_name}}</b></h4>
+                </div>
+                <h1>{{obj.themeName}} </h1>           
+                <h3>Theme Description </h3>
+                <p class="count">{{obj.themeDescription}}</p>
+            </div>
+        </div>
+    </div>
+    <pagination-controls (pageChange)= "page = $event" class="bottom"></pagination-controls>
+</div>
+  

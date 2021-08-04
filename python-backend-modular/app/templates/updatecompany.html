@@ -1,0 +1,28 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}Update company{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+    <body>
+     
+        <form class="example" method="post" action="" >
+            <input type="text" placeholder="Enter the comapany name" name="company">
+            <div class="msg">{{ msg }}</div>
+            <button type="submit"><i class="fa fa-search"></i>
+            </button>
+        </form>
+        <p></p>
+        
+    </body>
+</html>
+{% endblock %}

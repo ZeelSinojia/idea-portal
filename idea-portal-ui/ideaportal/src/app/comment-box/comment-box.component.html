@@ -1,0 +1,24 @@
+
+<div class="row cmtContainer">
+    <div class="col-md-12">
+
+        <button (click)="toggle()" id="header">All Comments [{{comments.length}}]<span>{{buttonString}}</span> </button>
+        <div class="expandable-content cmtBox" [@bodyExpansion]="state" >
+            <div id='warn'>{{getWarning()}}</div>
+            <div id="cmts" *ngFor="let comment of getComments(), let i=index">
+                <div id="cmt" *ngIf="i%2==0" style="background-color: rgb(255, 255, 255);">{{i+1}}: {{comment}}</div>
+                <!-- <div id="cmt" *ngIf="i%2==1">{{i+1}} | {{comment}}</div> -->
+                <div id="cmt" *ngIf="i%2==1">{{i+1}}: {{comment}}</div>
+            </div>
+        </div>
+        <form [formGroup]="commentForm">
+        <textarea #inputField class="cmtText" placeholder="Write your comment here!" formControlName="commentText"></textarea>
+    
+        <div class="cmtbtn">
+            <div class="animatedbutton">
+                <a (click)="setComment(inputField.value)" >Post comment</a>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>

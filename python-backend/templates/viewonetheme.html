@@ -1,0 +1,84 @@
+<!--
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>View One Theme</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="viewonetheme">
+			
+			<form method="get" action >
+				
+				<input type="text" name="viewID" placeholder="Enter the theme ID" id="viewID" required>
+
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</body>
+</html>
+
+action="{{ url_for('viewonetheme') }}" method="post"-->
+{% extends 'layout.html' %}
+
+{% block title %}View one themes{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+    <body>
+     
+        <form class="example" method="post" action="" >
+            <input type="text" placeholder="Enter the theme id" name="t_id">
+            <button type="submit"><i class="fa fa-search"></i>
+            </button>
+        </form>
+        <p></p>
+        <center>
+        <!--
+        	<thead> 
+    		<tr> 
+        		<th>Theme</th> 
+        		<th>Theme Description</th> 
+        		<th>Client Name </th>
+    		</tr> 
+    		</thead> 
+        {% for item in data %}
+            <tr>
+                <td>{{item['themename']}}</td> 
+                <td>{{item['themedescription']}}</td>
+                <td>{{item['userName']}}</td>    
+                </br>
+            </tr> -->
+        <table style="width:100%"> 
+    <thead> 
+    <tr> 
+        <th>Theme</th> 
+        <th>Theme Description</th> 
+        <th>Client Name </th>
+    </tr> 
+    </thead> 
+    <tbody> 
+        {% for row in data %}  
+            <tr> 
+                <td>{{row['themename']}}</td> 
+                <td>{{row['themedescription']}}</td>
+                <td>{{row['userName']}}</td>  
+            </tr> 
+        {% endfor %} 
+    </tbody> 
+</table>
+        {% endfor %}
+        </center>
+    </body>
+</html>
+{% endblock %}

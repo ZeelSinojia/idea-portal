@@ -1,0 +1,48 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}View All Ideas{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<body>
+<form class="example23" method="post" action="" >
+            <input type="text" placeholder="Enter the theme id" name="t_id">
+            <button type="Comment" value="value1" name="action1">See the ideas</i></button>
+            </button>
+</form>
+<p></p>
+<center>
+<table> 
+    <thead> 
+    <tr> 
+        <!--<th>Theme</th> -->
+        <th>Theme Name</th>
+        <th>Idea Description</th>
+        <th>Idea given By</th> 
+        <th>Idea URL</th>
+    </tr> 
+    </thead> 
+    <tbody> 
+        {% for row in data %}  
+            <tr> 
+              <!--  <td>{{row['themename']}}</td> -->
+                <td>{{row['themename']}}</td>
+                <td>{{row['ideadescription']}}</td> 
+                <td>{{row['userName']}}</td> 
+                <td>{{row['idea_URL']}}</td>
+            </tr> 
+        {% endfor %} 
+    </tbody> 
+</table>
+</center>
+
+</body>
+{% endblock %}

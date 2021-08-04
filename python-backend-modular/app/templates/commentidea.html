@@ -1,0 +1,26 @@
+  
+{% extends 'layout.html' %}
+
+{% block title %}View All Ideas{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+    <body>
+     
+        
+        <form class="example1" action="{{ url_for('commentonidea') }}"  method="post" action="" >
+            <input type="text" placeholder="Comment" name="comment">
+            <input type="text" placeholder="Enter the idea id" name="i_id">
+            <button type="Comment" value="value1" name="action1">Comment</i>
+            </button>
+        </form>
+    </body>
+</html>
+{% endblock %}

@@ -1,0 +1,84 @@
+.createtheme{
+        width: 80%;
+        margin-left: 125px;
+        margin-top: 100px;
+        height: 500px;
+        padding: 25px 15px 10px 15px;
+        border: 4px solid #000202;
+        border-radius: 30px;
+        font-size:1.1em;
+        font-family: 'Merriweather&display=swap', serif;
+        align-self: center;
+        display:block;
+}
+
+.theme{
+    font-size: 30px;
+    color:orange;
+
+}
+.themet{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+.client{
+    font-size: 30px;
+    color:orange;
+}
+.clientt{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+.desc{
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    border: 4px solid black;
+    border-radius: 6px;
+    background-color: grey;
+    resize: none;
+    margin: 8px 0;
+    color:white;
+}
+.file{
+    font-size: 30px;
+    margin: 8px 0;
+    color:orange;
+}
+.filel{
+    width:50%;
+    font-size: 30px;
+    margin: 8px 0;
+    
+}
+.but{
+    width:100%;
+    border: none;
+  color: rgb(214, 128, 15);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 8px 0;
+  cursor: pointer;
+  background-color: grey;
+  
+}
+.but:focus{
+    background-color:black;
+}

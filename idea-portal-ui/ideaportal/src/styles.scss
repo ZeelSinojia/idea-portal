@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~angular-notifier/styles";
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    // background: -webkit-repeating-linear-gradient(-45deg, #ffc635, #ff8c00);
+    // background-size: cover;
+}
+
+
+.animatedbutton {
+    user-select: none;
+    margin: 1vh 0;
+    display: inline-flex;
+
+    a { 
+        color: #064166 !important;
+        display: inline-block;
+        margin: 0 0.5vh;
+        border: 2px solid #064166;
+        font-size: 14px;
+        padding: 0.5vh 0.7vh;
+        border-radius: 1vh;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        text-decoration: none !important;
+
+      &:hover {
+            background: #0a89dd;
+            color: #fff !important;
+            border: 2px solid #0a89dd;
+      }
+    }
+}

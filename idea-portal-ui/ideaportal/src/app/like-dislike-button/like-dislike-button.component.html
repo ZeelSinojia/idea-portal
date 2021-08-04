@@ -1,0 +1,40 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+</head>
+
+<form class="row icons" #myForm="ngForm" novalidate>
+
+  <div class="icon col-md-4">
+      <label class="tag">Like</label>
+      <input (click)="saveLikes()"
+          id="likeCheck"
+          type="radio"
+          [checked]="likeStatus"
+          value="1"
+          name="liked"
+          ngModel>
+      <label for="likeCheck" class='fa fa-thumbs-up' aria-hidden="true" [@rotatedState]='likeflip'></label>
+      <label class="cnts">{{cntLike}}</label>
+  </div>
+  
+  <div class="icon col-md-4">
+      <label class="tag">Dislike</label>
+      <input (click)="saveDisLikes()" 
+          id="dislikeCheck" 
+          type="radio" 
+          [checked]="dislikeStatus" 
+          name="liked" 
+          ngModel>
+      <label for="dislikeCheck" class="fa fa-thumbs-down" aria-hidden="true"  [@rotatedState]='dislikeflip'></label>
+      <label class="cnts">{{cntDislike}}</label>
+  </div>
+
+  <div class="icon col-md-4">
+    <label class="tag">Participate</label>
+    <input (click)="addParticipate()" id="participateCheck" type="checkbox" [checked]="participateStatus"
+    value="parti" name="participate" ngModel required>
+    <label for="participateCheck" class="fa fa-handshake-o" aria-hidden="true" [@rotatedState]='participateflip'></label>
+    <label class="cnts">{{cntParticipate}}</label>
+  </div>
+
+</form>

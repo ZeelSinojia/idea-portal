@@ -1,0 +1,37 @@
+
+<h1 mat-dialog-title style="justify-content: center; display: flex;">Create Theme</h1>
+<form [formGroup]="themeForm" >
+<div mat-dialog-content>
+  <p>Theme Name</p>
+  <mat-form-field>  
+    <mat-label>Theme Name</mat-label>
+    <input matInput  formControlName="themeName">
+  </mat-form-field>
+
+  <p>Description</p>
+  <mat-form-field appearance="outline" style="width: 100%;">  
+    <mat-label>Description</mat-label>
+    <input matInput formControlName="themeDesc" >
+  </mat-form-field>
+
+<!-- <p>Describe your Tech Stack</p>
+  <mat-form-field appearance="outline" style="width: 100%;">  
+    <mat-label>Tech Stack</mat-label>
+    <input matInput [(ngModel)]="data.techstack">
+  </mat-form-field> -->
+<br>
+<p></p>
+  <label for="file" style="align-items: center;">Upload Files</label>
+<input id="file" type="file"    (change)="getFileDetails($event)"  formControlName="files"  multiple/>
+
+<div *ngFor="let f of files">
+  <div>*  {{f.name}}</div> 
+</div>
+
+
+</div>
+</form>
+<div mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close] style="margin-right: 3rem; margin-left: 80%;">Cancel</button>
+  <button mat-raised-button  cdkFocusInitial (click)="saveTheme()">Submit</button>
+</div>

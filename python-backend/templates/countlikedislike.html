@@ -1,0 +1,48 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}View one themes{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+    <body>
+     
+        <form class="example" method="post" action="" >
+            <input type="text" placeholder="Enter the idea id" name="i_id">
+            <button type="Comment" value="value1" name="action1">See the count</i></button>
+            
+        </form>
+        <center>
+        
+        <table style="width:100%"> 
+    <thead> 
+    <tr> 
+        <th>Count of like</th> 
+        <th>Count of dislike</th> 
+    </tr> 
+    </thead> 
+    <tbody> 
+        {% for row in data %} 
+        {% for row1 in data1 %} 
+
+            <tr> 
+                <td>{{row['c_l']}}</td>
+                <td>{{row1['c_d']}}</td>
+            </tr> 
+        {% endfor %} 
+        {% endfor %} 
+    </tbody> 
+</table>
+        
+        </center>
+    </body>
+</html>
+{% endblock %}

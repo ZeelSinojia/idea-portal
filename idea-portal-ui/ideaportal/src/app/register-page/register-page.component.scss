@@ -1,0 +1,44 @@
+
+
+mat-dialog-content{
+    max-width: 800px;
+    max-height: 800px;
+    min-width: 400px;
+    min-height: 350px;
+}
+
+@media screen and (max-width: 550px) {
+    mat-dialog-content{
+        max-width: 800px;
+        max-height: 800px;
+        min-width: 150px;
+        min-height: 250px;
+    }
+  }
+  
+.mat-orange{
+    color:white;
+    background-color: rgb(255, 94, 0);
+}
+
+.header{
+    text-align: center;
+}
+
+.full-width{
+    width: 80%;
+}
+
+.forgot-pasword{
+    padding-left: 0px;
+}
+
+.email-input{
+    padding-top: 10px;
+}
+
+.aLink{
+    float: right;
+    padding-right: 60px;
+    text-decoration: none;
+}

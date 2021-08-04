@@ -1,0 +1,93 @@
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,200i,300i,400,400i,500,500i');
+
+
+.navbar {
+    display: flex;
+    // Adds a shadow for elevation level 2 with default color and full opacity:
+    
+    @include mat-elevation(8);
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 70vh;
+
+}
+
+.navbar-item{
+    display: flex;
+    height: auto;
+    width: auto;
+}
+
+
+.navbar-icon-profile{
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-left: 43vw;
+    // justify-content: space-between;
+
+}
+
+
+.orange {
+  background-color:#ff8c00;
+}
+
+.orange-g {
+  background-image: linear-gradient(#ff8c00,  white);
+}
+
+.btn-outline-success {
+  border-color: #ff8c00;
+  color: #ff8c00;
+}
+ .btn-outline-success:hover {
+  background-color: orange ;
+  border-color: #ff8c00;
+
+}
+
+#input-div {
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+}
+
+#input-div:focus {
+  border-style: solid;
+}
+
+
+#search-list {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  margin-top: -10px;
+  color: black;
+}
+
+
+.col1 {
+  width: 5%;
+}
+
+.col2 {
+  width: 20%;
+}
+
+.col3 {
+  width: 50%;
+}
+.col4 {
+  width: 20%;
+}
+
+.col5 {
+  width: 5%;
+}

@@ -1,0 +1,59 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}View one themes{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+    <body>
+     
+        <form class="example" method="post" action="" >
+            <input type="text" placeholder="Enter the idea id" name="i_id">
+            <button type="submit"><i class="fa fa-search"></i>
+            </button>
+        </form>
+        <p></p>
+        <center>
+        <!--
+        {% for item in data %}
+            <tr>
+                <td>{{item['idea_id']}}</td> 
+                <td>{{item['ideadescription']}}</td>  
+                </br>
+            </tr>
+        {% endfor %}   -->
+        <table> 
+        <thead> 
+        <tr> 
+        <!--<th>Theme</th> -->
+            <th>Theme Name</th> 
+            <th>Idea Description</th>
+            <th>Idea given By</th> 
+            <th>Idea URL</th>  
+        </tr> 
+        </thead> 
+        <tbody> 
+        {% for row in data %}  
+            <tr> 
+              <!--  <td>{{row['themename']}}</td> -->
+                <td>{{row['themename']}}</td>
+                <td>{{row['ideadescription']}}</td> 
+                <td>{{row['userName']}}></td> 
+                <td>{{row['idea_URL']}}</td> 
+            </tr> 
+        {% endfor %} 
+    </tbody> 
+</table>
+    
+        </center>
+    </body>
+</html>
+{% endblock %}

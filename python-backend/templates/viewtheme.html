@@ -1,0 +1,31 @@
+  
+{% extends 'layout.html' %}
+
+{% block title %}View All themes{% endblock %}
+
+{% block content %}
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<table style="width:100%"> 
+    <thead> 
+    <tr> 
+        <th>Theme</th> 
+        <th>Theme Description</th> 
+        <th>Client Name </th>
+    </tr> 
+    </thead> 
+    <tbody> 
+        {% for row in value %}  
+            <tr> 
+                <td>{{row['themename']}}</td> 
+                <td>{{row['themedescription']}}</td>
+                <td>{{row['userName']}}</td>  
+            </tr> 
+        {% endfor %} 
+    </tbody> 
+</table>
+{% endblock %}

@@ -1,0 +1,39 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}Comment idea{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+    <body>
+     
+        
+        
+        <center>
+        <!--
+        {% for item in data %}
+            <tr>
+                <td>{{item['idea_id']}}</td> 
+                <td>{{item['ideadescription']}}</td>  
+                </br>
+            </tr>
+        {% endfor %}   -->
+       
+     
+        <form class="example1" method="post" action="" >
+            <input type="text" placeholder="Enter the comment" name="comment">
+            <button type="submit"><i class="fa fa-search"></i>
+            </button>
+        </form>
+
+    </body>
+</html>
+{% endblock %}

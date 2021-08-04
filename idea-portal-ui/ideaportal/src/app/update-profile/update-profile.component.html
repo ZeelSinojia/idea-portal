@@ -1,0 +1,119 @@
+
+<div style="text-align: center;">
+    <mat-card>
+        <mat-card-content>
+    <form name="changeEmail" [formGroup]="changeEmail" >
+        <!-- User email input -->
+        <div>
+            <mat-form-field class="full-width" appearence="outline">
+                <mat-label>User email</mat-label>
+                <input formControlName="userEmail" matInput required/>
+                <mat-error *ngIf="changeEmail.get('userEmail').errors?.required">
+                    Required email
+                </mat-error>
+                <mat-error *ngIf="changeEmail.get('userEmail').errors?.email">
+                    Invalid email
+                </mat-error>
+            </mat-form-field>
+        </div>
+        
+    </form>
+    <ng-template [ngIf]="isClientPartner">
+
+        <form name="changeCompanyName" [formGroup]="changeCompanyName" >
+            <!-- User Company input -->
+                <mat-form-field class="full-width" appearence="outline">
+                    <mat-label>Company name</mat-label>
+                    <input formControlName="companyName" matInput required/>
+                    <mat-error *ngIf="changeCompanyName.get('companyName').errors?.required">
+                        Required company name
+                    </mat-error>
+                </mat-form-field>
+            
+        </form>
+        
+      </ng-template>
+    
+    <!-- Form submit button -->
+    <ng-template [ngIf]="isClientPartner">
+    <div>
+        <button style="margin-left: 10px;" mat-raised-button [disabled]="(changeEmail.get('userEmail').errors?.email ||
+        changeEmail.get('userEmail').errors?.required  || changeCompanyName.get('companyName').errors?.required  )"  
+        color="orange" (click)="updateProfileData()">Save</button>
+        </div>
+    </ng-template>
+
+    <ng-template [ngIf]="!isClientPartner">
+    <div>
+        <button style="margin-left: 10px;" mat-raised-button [disabled]="(changeEmail.get('userEmail').errors?.email ||
+        changeEmail.get('userEmail').errors?.required)"  
+        color="orange" (click)="updateProfileData()">Save</button>
+        </div>
+    </ng-template>
+
+    </mat-card-content>
+    </mat-card>
+        <mat-card class="changePassword">
+            <mat-card-content>
+        <h2 mat-dialog-title>Change Password</h2>
+                <form name="changePassword" [formGroup]="changePassword" (ngSubmit)="updatePassword(changePassword.value)">
+    
+                    <!-- Old password input -->
+                    <div>
+                        <mat-form-field class="full-width" appearence="outline">
+                            <mat-label>Old password</mat-label>
+                            <input name='oldPassword' matInput placeholder="Password" [type]="hide0 ? 'password' : 'text'" formControlName="oldPassword" required>
+                            <button mat-icon-button matSuffix (click)="hide0 = !hide0" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error *ngIf="changePassword.get('oldPassword').errors?.required">
+                                Required password
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+    
+                    <!-- New password input -->
+                    <div>
+                        <mat-form-field class="full-width" appearence="outline">
+                            <mat-label>New password</mat-label>
+                            <input name='newPassword' matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="newPassword" required>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error *ngIf="changePassword.get('newPassword').errors?.required">
+                                Required password
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+        
+                    <!-- confirm password input -->
+                    <div>
+                    <mat-form-field class="full-width" appearence="outline">
+                        <mat-label>Conform password</mat-label>
+                        <input matInput appConfirmEqualValidator='newPassword' placeholder="Confirm password" [type]="hide1 ? 'password' : 'text'" formControlName="confirmPassword" required>
+                        <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+                            <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="changePassword.get('confirmPassword').errors?.required">
+                            Required password
+                        </mat-error>
+                        <mat-error *ngIf="changePassword.get('confirmPassword').errors?.notEqual">
+                            Password and Confirm Password does not match
+                        </mat-error>
+                    </mat-form-field>
+                    </div>
+        
+                    <div *ngIf="messagePass?.length > 0">
+                        <span class="alert">{{messagePass}}</span><br>
+                     </div>
+
+                    <!-- Form submit button -->
+                <button mat-raised-button [disabled]="(
+                changePassword.get('newPassword').errors?.required  ||
+                changePassword.get('oldPassword').errors?.required  ||
+                changePassword.get('confirmPassword').errors?.required||
+                changePassword.get('confirmPassword').errors?.notEqual)"  color="orange">Save</button>
+            </form>
+        </mat-card-content>
+        </mat-card>
+        </div>
